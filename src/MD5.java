@@ -1,15 +1,12 @@
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 public class MD5 implements IFuncionesHash {
 
-    
-    public static String calculateMD5(String input) {
+    public static String calculateMD5(String clave) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
-            
-            byte[] hashBytes = md.digest(input.getBytes());
-            
+            byte[] hashBytes = md.digest(clave.getBytes());
+
             StringBuilder hexString = new StringBuilder();
             for (byte hashByte : hashBytes) {
                 String hex = Integer.toHexString(0xff & hashByte);
@@ -18,24 +15,16 @@ public class MD5 implements IFuncionesHash {
                 }
                 hexString.append(hex);
             }
-            
+
             return hexString.toString();
-            
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            return null;
+
+        } catch (Exception e) {
+            throw new RuntimeException("Error al calcular el hash MD5", e);
         }
     }
 
     @Override
     public String generarHash(String clave) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'generarHash'");
+        return calculateMD5(clave);
     }
-
-    // public static void main(String[] args) {
-    //     String originalString = "Eyou eyou";
-    //     String md5Hash = calculateMD5(originalString);
-    //     System.out.println("MD5 Hash: " + md5Hash);
-    // }
 }
