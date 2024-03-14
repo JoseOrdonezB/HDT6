@@ -1,7 +1,3 @@
-public class IFuncionesHash {
-    public interface HashFunction {
-       String generarHash(String clave);
-    }
-    
-    
+public interface IFuncionesHash {
+    String generarHash(String clave);
 }
