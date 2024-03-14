@@ -5,7 +5,7 @@ public class IFuncionesHash {
 
 
     public interface HashFunction {
-        int generarHash(String clave);
+        int generarHash(int clave);
     }
     
     
