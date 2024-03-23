@@ -7,7 +7,6 @@ public class LlaveEstudiante {
         this.mapaEstudiantes = mapaEstudiantes;
     }
 
-   
     public Estudiante buscarPorLlave(String llave) {
         return mapaEstudiantes.get(llave);
     }
@@ -19,8 +18,6 @@ public class LlaveEstudiante {
         private String email;
         private String codigoPostal;
         private String nacionalidad;
-
-      
     }
 
     
