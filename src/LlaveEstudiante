@@ -1,0 +1,30 @@
+import java.util.Map;
+
+public class LlaveEstudiante {
+    private Map<String, Estudiante> mapaEstudiantes;
+
+    public Estudiante2(Map<String, Estudiante> mapaEstudiantes) {
+        this.mapaEstudiantes = mapaEstudiantes;
+    }
+
+   
+    public Estudiante buscarPorLlave(String llave) {
+        return mapaEstudiantes.get(llave);
+    }
+
+    
+    static class Estudiante {
+        private String nombre;
+        private String telefono;
+        private String email;
+        private String codigoPostal;
+        private String nacionalidad;
+
+      
+    }
+
+    
+    public static void main(String[] args) {
+        
+    }
+}

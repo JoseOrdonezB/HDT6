@@ -1,0 +1,43 @@
+import java.util.List;
+import java.util.Map;
+
+public class LlaveNacionalidad {
+    private Map<String, List<Estudiantes>> mapaEstudiantesPorNacionalidad;
+
+    public LlaveNacionalidad(Map<String, List<Estudiantes>> mapaEstudiantesPorNacionalidad) {
+        this.mapaEstudiantesPorNacionalidad = mapaEstudiantesPorNacionalidad;
+    }
+
+    
+    public List<Estudiantes> buscarPorNacionalidad(String nacionalidad) {
+        return mapaEstudiantesPorNacionalidad.getOrDefault(nacionalidad, List.of());
+    }
+
+    
+    static class Estudiantes {
+        private String name;
+        private String phone;
+        private String email;
+        private String postalZip;
+        private String country;
+
+        public Estudiantes(String name, String phone, String email, String postalZip, String country) {
+            this.name = name;
+            this.phone = phone;
+            this.email = email;
+            this.postalZip = postalZip;
+            this.country = country;
+        }
+
+       
+        @Override
+        public String toString() {
+            return "Nombre: " + name + "\nTeléfono: " + phone + "\nEmail: " + email + "\nCódigo Postal: " + postalZip + "\nPaís: " + country;
+        }
+    }
+
+    
+    public static void main(String[] args) {
+
+    }
+}
